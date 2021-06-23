@@ -3,7 +3,6 @@ import random
 from discord.ext import commands
 from utils.weather import Weather
 from utils.bitcoin import Bitcoin
-from utils.covid19 import Covid
 
 
 class Commands(commands.Cog):
@@ -70,17 +69,6 @@ class Commands(commands.Cog):
     @commands.command()
     async def bitcoin(self, ctx):
         await ctx.send(f"1 BTC kosztuje {Bitcoin.show_price_bitcoin()} PLN")
-
-    @commands.command()
-    async def covid(self, ctx, country_prefix: str):
-        data = Covid(country_prefix).get()
-        ed = discord.Embed(title="Covid19", color=discord.Color.blurple())
-        ed.set_thumbnail(url="http://inzynieria.com/uploaded/articles/crop_4/58119.jpg")
-        ed.add_field(name="Kraj:", value=data.get_country_name, inline=False)
-        ed.add_field(name="Potwierdzone przypadki:", value=str(data.get_country_confirmed), inline=False)
-        ed.add_field(name="Wyzdrowienia:", value=str(data.get_country_recovered), inline=False)
-        ed.add_field(name="Śmierci:", value=str(data.get_country_deaths), inline=False)
-        await ctx.send(embed=ed)
 
     @commands.command()
     async def losuj(self, ctx, *args):

@@ -23,7 +23,6 @@ class Help(commands.Cog):
         ed.add_field(name=".ban [użytkownik] [powód]", value="Banuje użytkownika, jeżeli nie podamy powodu użytkownik zostanie zbanowany z domyślnym powodem.", inline=False)
         ed.add_field(name=".kick [użytkownik] [powód]", value="Wyrzuca  użytkownika z serwera, jeżeli nie podamy powodu użytkownik zostanie wyrzucony z domyślnym powodem.", inline=False)
         ed.add_field(name=".unban [użytkownik]", value="Odbanowuje użytkownika.", inline=False)
-        ed.add_field(name=".covid [skrót państwa]", value="Pokazuje aktualne informacje na temat covid19 w danym państwie.", inline=False)
         ed.add_field(name=".losuj [argumenty]", value="Komenda losuje jedną wartość z podanych argumentów", inline=False)
         ed.add_field(name=".dodaj [uzytkownik] [rola]", value="Komenda dodaje rolę użytkownikowi", inline=False)
         ed.add_field(name=".usun [uzytkownik] [rola]", value="Komenda usuwa role użytkownikowi", inline=False)
